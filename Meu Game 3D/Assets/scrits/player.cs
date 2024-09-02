@@ -7,7 +7,8 @@ using vector3 = UnityEngine.Vector3;
 public class player : MonoBehaviour
 {
     public int velocidade = 10;
-    Rigidbody rb;
+    public int forcaPulo = 7;
+    private Rigidbody rb;
      // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +20,14 @@ public class player : MonoBehaviour
     {
 float h = Input.GetAxis("Horizontal");
 float v = Input.GetAxis("Vertical");
+
 Vector3 direcao = new Vector3(h, 0, v);
 rb.AddForce(direcao * velocidade * Time.deltaTime,ForceMode. Impulse);
     
-    
+   if(Input,GetKeyDown(KeyCode.Space)) 
+
+
+
 if (transform. position.y < - 5)
 {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
