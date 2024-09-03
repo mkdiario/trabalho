@@ -17,6 +17,7 @@ public class camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = alvo.position - offset;
+        Vector3 posFinl = alvo.position + offset;
+        transform.position = alvo.position
     }
 }
