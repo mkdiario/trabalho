@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using vector3 = UnityEngine.Vector3;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public int velocidade = 10;
     public int forcaPulo = 7;
@@ -21,7 +21,7 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!!nochao && collision.gameObject.tag == "chão") 
+        if (!nochao && collision.gameObject.tag == "chão") 
         {
             nochao = true;
         }
@@ -30,12 +30,12 @@ public class player : MonoBehaviour
 
 // Update is called once per frame
     void Update()
-    {
- Debug.Log("UPDATE");       
-float h = Input.GetAxis("Horizontal"); //-1 esquerda,0 nada, 1 direita
-float v = Input.GetAxis("Vertical");// -1 pra tras, 0 nada, 1 pra frente
+    { 
+        Debug.Log("UPDATE");       
+        float h = Input.GetAxis("Horizontal"); //-1 esquerda,0 nada, 1 direita
+        float v = Input.GetAxis("Vertical");// -1 pra tras, 0 nada, 1 pra frente
 
-Vector3 direcao = new Vector3(h, 0, v);
+            Vector3 direcao = new Vector3(h, 0, v);
 rb.AddForce(direcao * velocidade * Time.deltaTime,ForceMode. Impulse);
     
    if (Input.GetKeyDown(KeyCode.Space) && nochao) 
