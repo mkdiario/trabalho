@@ -18,6 +18,6 @@ public class camera : MonoBehaviour
     void Update()
     {
         Vector3 posFinl = alvo.position + offset;
-        transform.position = alvo.position
+        transform.position = alvo.position;
     }
 }
